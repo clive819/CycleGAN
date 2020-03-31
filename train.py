@@ -125,6 +125,8 @@ for epoch in range(1000):
         prevBestLoss = avgLoss
         torch.save(generatorA2B.state_dict(), 'modelA2B.pt')
         torch.save(generatorB2A.state_dict(), 'modelB2A.pt')
+        torch.save(discriminatorA.state_dict(), 'discriminatorA.pt')
+        torch.save(discriminatorB.state_dict(), 'discriminatorB.pt')
         writer.add_scalar('Loss/Model', avgLoss, epoch)
 
     writer.flush()
